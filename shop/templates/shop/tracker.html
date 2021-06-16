@@ -1,0 +1,88 @@
+{% extends 'shop/basic2.html' %}
+{% load static %}
+{% block title%} HappyZone Tracker{% endblock %}
+{% block css %}
+body{
+background-image : url("{% static 'shop/shop.jpg' %}");
+background-repeat: no-repeat;
+background-attachment: fixed;
+  background-size: cover;
+}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="col my-4">
+        <h2><font color="white">Enter your Order Id and Email address to track your order</font></h2>
+        <form method="post" action="#" id="trackerForm">{% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="orderId"><font color="white">Order Id</font></label>
+                    <input type="text" class="form-control" id="orderId" name="orderId" placeholder="Order Id">
+                </div>
+<!--                <div class="form-group col-md-6">-->
+<!--                    <label for="email">Email</label>-->
+<!--                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">-->
+<!--                </div>-->
+                <div class="form-group col-md-6">
+                    <label for="Name2"><font color="white">Full Name</font></label>
+                    <input type="text" class="form-control" id="Name2" name="Name2" placeholder="Full Name">
+                </div>
+                <button type="submit" class="btn btn-primary">Track Order</button>
+            </div>
+    </div>
+    <div class="col my-4">
+        <h2><font color="black"><b>Your Order Status</b></font></h2>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+            	<font color="black">Enter your order Id and Full Name and click on Track Order to find details about your order!
+                </font></ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+
+$('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    var formData = {
+        'orderId': $('input[name=orderId]').val(),
+<!--        'email': $('input[name=email]').val(),-->
+        'Name2': $('input[name=Name2]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+    console.log(formData)
+    $.ajax({
+            type: 'POST',
+            url: '/tracker/',
+            data: formData,
+            encode: true
+        })
+        .done(function(data) {
+            console.log(data)
+            updates = JSON.parse(data);
+            console.log(updates.length)
+            if (updates.length > 0 & updates != {}) {
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${text}
+                    <span class="badge badge-primary badge-pill">${time}</span>
+                </li>`
+                    $('#items').append(mystr);
+
+                }
+            } else {
+            	mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sorry, We are not able to fetch this order id and email. Make sure to type correct order Id and email</li>`
+            	$('#items').append(mystr);
+            }
+        });
+    event.preventDefault();
+});
+</script>
+{% endblock %}
+
+
+

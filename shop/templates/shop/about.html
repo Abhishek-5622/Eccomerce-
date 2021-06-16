@@ -1,0 +1,103 @@
+{% extends 'shop/basic2.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+{% block title%} About Us{% endblock %}
+
+{% block css %}
+.c1{
+background-image : url("{% static 'shop/bor.jpg' %}");
+background-repeat: no-repeat;
+background-attachment: fixed;
+  background-size: cover;
+
+
+}
+{% endblock %}
+{% block body %}
+
+{% load static %}
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron c1">
+    <div class="container ">
+<div >
+      <h1 class="display-3"><b>HappyZone</b></h1></div><font size="5px">
+      <p>HappyZone is an Indian electronic commerce company based in India. Founded by Abhishek Mehta in 2019, the company initially focused on book sales,
+        before expanding into other product categories such as consumer electronics, fashion, and lifestyle products. HappyZone focuses on e-commerce, cloud computing,
+        digital streaming, and artificial intelligence. It is considered one of the Big Four technology companies, along with Google, Apple, and Facebook.
+        It has been referred to as "one of the most influential economic and cultural forces in the world" as well as the world's most valuable brand.
+      </p>
+      <p>
+HappyZone is known for its disruption of well-established industries through technological innovation and mass scale. It is the world's largest online marketplace,
+        AI assistant provider, live-streaming platform and cloud computing platform as measured by revenue and market capitalization. HappyZone is the largest Internet company
+        by revenue in the world. It is the second largest private employer in the United States and one of the world's most valuable companies.
+
+ The company started as an online marketplace for books but expanded to sell electronics, software,
+        video games, apparel, furniture, food, toys, and jewelry. In 2020, HappyZone surpassed Walmart as the most valuable retailer in the United States by market capitalization.
+        In 2019, HappyZone acquired Whole Foods Market for US$13.4 billion, substantially increasing HappyZone's footprint as a physical retailer.
+      </p>
+<p>
+HappyZone distributes downloads and streaming of video, music, and audiobooks through its Prime Video, HappyZone Music, Twitch, and Audible subsidiaries. HappyZone also has a publishing arm,
+        HappyZone Publishing, a film and television studio, HappyZone Studios, and a cloud computing subsidiary, HappyZone Web Services. It produces consumer electronics including
+        Kindle e-readers, Fire tablets, Fire TV, and Echo devices. In addition, HappyZone acquisitions include Ring, Twitch, Whole Foods Market, and IMDb. Among various controversies,
+        the company has been criticized for technological surveillance overreach, a hyper-competitive and demanding work culture, tax avoidance, and anti-competitive
+        practices.
+
+</p>
+      <p>
+        <b>Content search</b><br>
+"Search Inside the Book" is a feature which allows customers to search for keywords in the full text of many books in the catalog. The feature started with 120,000 titles
+        (or 33 million pages of text) on October 23, 2003.[105] There are about 300,000 books in the program.
+        HappyZone has cooperated with around 130 publishers to allow users to perform these searches.
+
+To avoid copyright violations, HappyZone does not return the computer-readable text of the book. Instead, it returns a picture of the matching page, instructs the web browser
+        to disable printing and puts limits on the number of pages in a book a single user can access. Additionally, customers can purchase online access to some of the same books
+        via the "HappyZone Upgrade" program.
+      </p>
+
+      <p>
+        <b>Third-party sellers</b><br>
+HappyZone derives many of its sales (around 40% in 2019) from third-party sellers who sell products on HappyZone. Associates receive a commission for referring customers to HappyZone
+        by placing links to HappyZone on their websites if the referral results in a sale. Worldwide, HappyZone has "over 900,000 members" in its affiliate programs.
+        In the middle of 2014, the HappyZone Affiliate Program is used by 1.2% of all websites and it is the second most popular advertising network after Google Ads.
+        It is frequently used by websites and non-profits to provide a way for supporters to earn them a commission.[109] HappyZone reported over 1.3 million sellers sold products
+        through HappyZone's websites . Unlike eBay, HappyZone sellers do not have to maintain separate payment accounts; all payments are handled by HappyZone.
+
+
+      </p></font>
+      <p><a class="btn btn-primary btn-lg " href="/" role="button">Start Shopping »</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+          <a href = "/contact"> <img src = "{% static 'shop/user1.jpg'%}"></a>
+          <pre><font size = "40px" color = "gray"><p><b>Contact Us</b></p></font></pre>
+
+      </div>
+
+      <div class="col-md-4">
+<a href = "/tracker"> <img src = "{% static 'shop/travel.png'%}"></a>
+          <pre><font size = "40px" color = "gray"><p><b> Tracker</b></p></font></pre>
+      </div>
+ <div class="col-md-4">
+<a href = "/help"> <img src = "{% static 'shop/help.png'%}"></a>
+     <pre><font size = "40px" color = "gray"><p><b>   Help </b></p></font></pre>
+      </div>
+
+
+  </div> <!-- /container -->
+
+</main>
+
+
+
+
+
+{% endblock %}

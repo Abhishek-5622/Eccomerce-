@@ -1,0 +1,98 @@
+{% extends 'shop/basic2.html' %}
+
+{% block title%} Help - HappyZone{% endblock %}
+
+{% block css %}
+
+
+
+{% endblock %}
+{% block body %}
+{% load static %}
+
+{%if user.is_authenticated%}
+
+
+
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Welcome {{request.user}}</strong> How can we help you ?.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</div>
+
+
+
+
+ {%else%}
+
+
+  <div class="alert alert-success alert-dismissible fade show " role="alert">
+  <strong>Welcome User</strong> How can we help you ?
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</div>
+
+    {%endif%}
+<div class="container ">
+<b><font size="15px" color="black"> How can we help you ?</font></b><br>
+  <b><font size="5px" color="black">  Top 10 Frequently asked questions(FAQ)</font></b><br>
+    <br>
+    <font size="4px">
+    <b>Ques1.</b> What is HappyZone?
+    <br>
+    <font color ="blue"><b>Ans</b> HappyZone is a Indian electronic commerce company .
+        The company main focused was on providing all customer needs and requirement at one place as its name suggest .</font>
+<br><br>
+
+
+        <b>Ques2.</b> If designing and cloth type is not same as the picture shown in website, can get exchange easily?
+    <br>
+    <font color ="blue"><b>Ans</b> Yes, You can easily exchange your product. .</font>
+<br><br>
+
+        <b>Ques3.</b> What if I have a problem in my order?
+    <br>
+    <font color ="blue"><b>Ans</b> We’re here to help. Once you’ve placed an order, just contact our support team from within the app and we’ll take care of your issue.</font>
+<br><br>
+        <b>Ques4.</b> How does it work?
+    <br>
+    <font color ="blue"><b>Ans</b> Select items you'd like to purchase then click on checkout button.
+          Pay with cash, or credit or paytm , then kick back and relax; we've got it from here.
+        Your order will be knocking on your door before you know it!</font>
+<br><br>
+
+        <b>Ques5.</b> How long does delivery usually take?
+    <br>
+    <font color ="blue"><b>Ans</b> Most deliveries happen within 2 to 3 days.</font>
+<br><br>
+
+        <b>Ques6.</b> Is your site secure? How can be I sure?
+    <br>
+    <font color ="blue"><b>Ans</b> You bet it is! All credit cards are processed through Creadit card/Debit card. </font>
+<br><br>
+
+        <b>Ques7.</b> Product price include GST or other taxes?
+    <br>
+    <font color ="blue"><b>Ans</b> Yes, All product prices include GST</font>
+<br><br>
+
+        <b>Ques8.</b> If piece is defective? How we can replace product?
+    <br>
+    <font color ="blue"><b>Ans</b> If by-chance some product is defective. You can call to our customer care number 999585858, if there is any issue in the product.
+        We will replace your product within 24 hours.</font>
+<br><br>
+
+        <b>Ques9.</b> Is your checkout page easy to use?
+    <br>
+    <font color ="blue"><b>Ans</b> Yes, It is very simple. Click on checkout button then fill your info and then you can easily pay through different modes.</font>
+<br><br>
+
+        <b>Ques10.</b> Are your product descriptions concise and clear?
+    <br>
+    <font color ="blue"><b>Ans</b> Yes, all the product descriptions are concise and clear as it include all the required information for the customer.
+        .</font>
+<br><br>
+</font>
+    </div>
+{% endblock %}
